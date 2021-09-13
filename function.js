@@ -1,4 +1,5 @@
 const [selectedItemList, setSelectedItemList] = useState([])
+const [update, setUpdate] = useState(false)
 
 const selectUnselectItem = (item) => {
         let selectedItems = selectedItemList
@@ -9,4 +10,5 @@ const selectUnselectItem = (item) => {
             selectedItems.push(item)
         }
         setSelectedItemList(selectedItems)
+        setUpdate(!update)
 }
