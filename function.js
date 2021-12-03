@@ -1,8 +1,7 @@
 const [selectedItemList, setSelectedItemList] = useState([])
-const [update, setUpdate] = useState(false)
 
 const selectUnselectItem = (item) => {
-        let selectedItems = selectedItemList
+        let selectedItems = [...selectedItemList]
         if (selectedItems.find(x => x.id == item.id)) {
             selectedItems = selectedItems.filter(x => x.id != item.id)
         }
@@ -10,5 +9,4 @@ const selectUnselectItem = (item) => {
             selectedItems.push(item)
         }
         setSelectedItemList(selectedItems)
-        setUpdate(!update)
 }
